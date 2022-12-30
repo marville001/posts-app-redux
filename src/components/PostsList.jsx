@@ -25,7 +25,11 @@ const PostsList = () => {
                     <div className="flex flex-col gap-2">
                         <button
                             onClick={() => handleLikePost(post?.id)}
-                            className="bg-green-400 text-white rounded-lg p-1"
+                            className={`${
+                                post?.likes > 0
+                                    ? "bg-green-600"
+                                    : "bg-green-300"
+                            } text-white rounded-lg p-1`}
                         >
                             Like {post?.likes}
                         </button>
