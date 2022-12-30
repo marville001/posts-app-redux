@@ -17,7 +17,7 @@ const PostsList = () => {
     return (
         <div className="bg-white max-w-2xl mx-auto my-10 p-6 rounded-lg">
             {posts?.map((post) => (
-                <div className="flex border-b gap-4 mt-3 pb-2">
+                <div key={post?.id} className="flex border-b gap-4 mt-3 pb-2">
                     <div className="flex-1">
                         <h2 className="font-bold mb-2">{post?.title}</h2>
                         <p>{post?.post}</p>

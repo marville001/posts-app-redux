@@ -12,7 +12,12 @@ const AddPostForm = () => {
         // Validate the inputs
 
         const id = Math.floor(Math.random() * 136736723);
-        dispatch(createPostAction({ title, post, id, likes: 0 }));
+        const newPost = { title, post, id, likes: 0 }
+        dispatch(createPostAction(newPost));
+
+        const posts = JSON.parse(localStorage.getItem('posts') || "[]")
+
+        localStorage.setItem("posts", JSON.stringify([...posts, newPost]))
 
         setTitle("");
         setPost("");
