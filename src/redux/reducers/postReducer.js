@@ -2,6 +2,7 @@ import {
     CREATE_POST_ACTION,
     DELETE_POST_ACTION,
     LIKE_POST_ACTION,
+    LOAD_POST_ACTION,
 } from "../types";
 
 const initialState = {
@@ -17,6 +18,8 @@ export const postReducer = (state = initialState, action) => {
     // }
 
     switch (action.type) {
+        case LOAD_POST_ACTION:
+            return { ...state, posts: action.posts };
         case CREATE_POST_ACTION:
             return { ...state, posts: [...state.posts, action.post] };
         case DELETE_POST_ACTION:
