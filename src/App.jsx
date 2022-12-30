@@ -12,7 +12,6 @@ const App = () => {
   useEffect(() => {
     const posts = JSON.parse(localStorage.getItem('posts') || "[]")
 
-    console.log(posts);
     if (posts?.length > 0) {
       dispatch(loadPostsAction(posts))
     }
