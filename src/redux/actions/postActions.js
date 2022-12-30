@@ -1,4 +1,11 @@
-import { CREATE_POST_ACTION, DELETE_POST_ACTION, LIKE_POST_ACTION } from "../types"
+import { CREATE_POST_ACTION, DELETE_POST_ACTION, LIKE_POST_ACTION, LOAD_POST_ACTION } from "../types"
+
+export const loadPostsAction = (posts) => {
+	return {
+		type: LOAD_POST_ACTION,
+		posts
+	}
+}
 
 export const createPostAction = (newPost) => {
 	return {
